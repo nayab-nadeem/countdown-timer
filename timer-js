@@ -1,5 +1,9 @@
 <script> 
-var deadline = new Date("Jan 5, 2018 15:37:25").getTime(); 
+ var userEndingTime = $( "#endingTime" ).text();
+
+$( document ).ready(function() {
+
+var deadline = new Date(userEndingTime).getTime(); 
 var x = setInterval(function() { 
 var now = new Date().getTime(); 
 var t = deadline - now; 
@@ -9,9 +13,23 @@ var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((t % (1000 * 60)) / 1000); 
 document.getElementById("demo").innerHTML = days + "d "  
 + hours + "h " + minutes + "m " + seconds + "s "; 
-    if (t < 0) { 
+if(days<=0)
+{
+ document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s "; 
+}
+if(hours<=0)
+{
+ document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s "; 
+}
+if(minutes<=0)
+{
+document.getElementById("demo").innerHTML =  seconds + "s "; 
+}
+
+   if (t < 0) { 
         clearInterval(x); 
         document.getElementById("demo").innerHTML = "EXPIRED"; 
     } 
 }, 1000); 
+});
 </script> 
