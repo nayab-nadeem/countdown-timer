@@ -1,0 +1,28 @@
+ {% if boolTimer %}
+ <h2 class="">{{ section.settings.salesText }}<span id="demo"></span> </h2><span id="endingTime"></span>
+  {% endif %}
+	
+	 {% schema %}
+	  {
+    "name": "Countdown Timer",
+    "settings": [
+      {
+        "id": "boolTimer",
+        "type": "checbox",
+        "default": "Title"
+      },
+      {
+        "id": "saleText",
+        "type": "text",
+        "label": "Add custom text",
+        "default": "<p>Add custom text</p>"
+      },
+          {
+        "id": "endingTime",
+        "type": "text",
+        "label": "Follow Format-Jan 5, 2018 15:37:25",
+        "default": "Jan 5, 2018 15:37:25"
+      }
+    ]
+  }
+  	 {% schema %}
