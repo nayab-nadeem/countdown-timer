@@ -1,5 +1,5 @@
  {% if boolTimer %}
- <h2 class="">{{ section.settings.salesText }}<span id="demo"></span> </h2><span id="endingTime"></span>
+ <h2 class="">{{ section.settings.saleText }}<span id="demo"></span> </h2><span id="endingTime"></span>
   {% endif %}
 	
 	 {% schema %}
